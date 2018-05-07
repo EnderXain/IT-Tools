@@ -32,7 +32,7 @@ gulp.task( 'css', ['stylus-css'], function(){
 });
 
 gulp.task('stylus-css', function(){
-    return gulp.src('./app/temp/stylus/**/*.styl')
+    return gulp.src(['./app/temp/stylus/**/*.styl', '!./app/temp/stylus/imports/*'])
     .pipe(stylus(stylusOps))
     .on('error', function(errorInfo){
         console.error(errorInfo.toString());
